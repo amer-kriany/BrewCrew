@@ -121,20 +121,19 @@ Run the app:
 flutter run
 
 🧱 Data Models
-///////////////////////
+
 Brew Model
 class Brew {
   final String name;
   final String sugars;
   final int strength;
-///////////////////////
+
   Brew({
     required this.name,
     required this.sugars,
     required this.strength,
   });
 }
-///////////////////////
 UserData Model
 class UserData {
   final String uid;
@@ -149,8 +148,6 @@ class UserData {
     required this.strength,
   });
 }
-///////////////////////
-
 ⚡ App Flow
 Login/Register
         ↓
@@ -161,8 +158,6 @@ Settings Bottom Sheet
 Firestore Update
         ↓
 Automatic UI Refresh
-
-///////////////////////
 🎯 Why This Project?
 
 Brew Crew is a great project for learning:
