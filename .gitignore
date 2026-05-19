@@ -73,3 +73,5 @@
 
 # google services
 **/android/app/google-services.json
+
+.gradle-home/
