@@ -43,6 +43,7 @@ Cloud Firestore
 Provider
 flutter_spinkit
 📂 Project Structure
+
 lib/
 │
 ├── models/
@@ -64,7 +65,9 @@ lib/
 │   └── widgets/
 │
 └── main.dart
+
 🔥 Firebase Configuration
+
 1️⃣ Create Firebase Project
 
 Open Firebase Console and create a new project.
@@ -85,13 +88,17 @@ google-services.json
 Move it into:
 
 android/app/
+
 3️⃣ Enable Authentication
+
 Firebase Console
 → Authentication
 → Sign-in Method
 → Email/Password
 → Enable
+
 4️⃣ Create Firestore Database
+
 Firestore Database
 → Create Database
 → Start in Test Mode
@@ -99,7 +106,7 @@ Firestore Database
 
 Clone the repository:
 
-git clone https://github.com/yourusername/brew-crew.git
+git clone https://github.com/amer-kriany/BrewCrew
 
 Go into the project:
 
@@ -112,19 +119,22 @@ flutter pub get
 Run the app:
 
 flutter run
+
 🧱 Data Models
+///////////////////////
 Brew Model
 class Brew {
   final String name;
   final String sugars;
   final int strength;
-
+///////////////////////
   Brew({
     required this.name,
     required this.sugars,
     required this.strength,
   });
 }
+///////////////////////
 UserData Model
 class UserData {
   final String uid;
@@ -139,6 +149,8 @@ class UserData {
     required this.strength,
   });
 }
+///////////////////////
+
 ⚡ App Flow
 Login/Register
         ↓
@@ -149,6 +161,8 @@ Settings Bottom Sheet
 Firestore Update
         ↓
 Automatic UI Refresh
+
+///////////////////////
 🎯 Why This Project?
 
 Brew Crew is a great project for learning:
@@ -162,19 +176,6 @@ Bottom sheets
 Clean UI design
 
 Perfect for intermediate Flutter developers who want a real Firebase project.
-
-📸 Screenshots
-Login	Home	Settings
-Add Screenshot	Add Screenshot	Add Screenshot
-🛠 Future Improvements
-🌙 Dark mode
-📸 Profile images
-🔔 Push notifications
-📱 Better animations
-🍎 iOS optimization
-🧪 Testing support
-🌍 Multi-language support
-🤝 Contributing
 
 Contributions are welcome.
 
