@@ -1,99 +1,78 @@
 ☕ Brew Crew
 
-A modern Flutter + Firebase application for managing personalized coffee brew preferences with real-time cloud sync.
+A modern Flutter + Firebase coffee app built with realtime streams, clean architecture, and smooth user experience.
 
-📱 Overview
+✨ Preview
+Authentication → Realtime Brew Feed → Live Preference Updates
 
-Brew Crew is a clean and simple Flutter mobile application that demonstrates authentication, real-time Firestore integration, and state management using Provider.
+Brew Crew is a minimalist coffee-themed mobile application where users can create an account, manage their brew preferences, and sync everything instantly with Firebase.
 
-Users can:
+Built using:
 
-Create an account or sign in
-View a live list of coffee brews
-Customize their brew preferences
-Update profile settings in real time
-Sync data securely with Firebase
+Flutter
+Firebase Auth
+Cloud Firestore
+Provider
+Stream-based architecture
+🚀 Features
+🔐 Authentication
+Email & password sign up
+Secure login system
+Persistent auth sessions
+☁️ Cloud Firestore
+Realtime database updates
+User-specific brew data
+Stream-powered UI refreshes
+☕ Brew Personalization
 
-The project follows a scalable Flutter architecture and is perfect for learning:
+Each user can customize:
 
+Name
+Sugar amount (0–4)
+Brew strength (100–900)
+🎨 Modern UI
+Coffee-inspired design
+Smooth bottom sheet settings
+Clean responsive layout
+Loading animations with flutter_spinkit
+🧠 Tech Stack
+Flutter
+Firebase Core
 Firebase Authentication
 Cloud Firestore
-Stream-based state management
-Flutter UI composition
-Provider architecture
-✨ Features
-🔐 Email & Password Authentication
-☁️ Cloud Firestore Integration
-⚡ Real-time Data Streams
-👤 User-specific Brew Preferences
-🎛️ Bottom Sheet Settings Panel
-☕ Coffee-themed Modern UI
-⏳ Loading Indicators using flutter_spinkit
-🧠 Provider State Management
-📱 Responsive Mobile Layout
-🛠️ Tech Stack
-Technology	Purpose
-Flutter	Cross-platform mobile framework
-Firebase Core	Firebase initialization
-Firebase Auth	User authentication
-Cloud Firestore	Realtime database
-Provider	State management
-flutter_spinkit	Loading animations
-🧱 Architecture
-
-The app follows a layered Flutter architecture:
-
+Provider
+flutter_spinkit
+📂 Project Structure
 lib/
+│
 ├── models/
+│   ├── brew.dart
+│   └── user.dart
+│
 ├── screens/
-│   ├── authentication/
+│   ├── authenticate/
 │   ├── home/
 │   └── wrapper/
+│
 ├── services/
+│   ├── auth.dart
+│   └── database.dart
+│
 ├── shared/
+│   ├── constants.dart
+│   ├── loading.dart
+│   └── widgets/
+│
 └── main.dart
-📂 Data Models
-Brew
+🔥 Firebase Configuration
+1️⃣ Create Firebase Project
 
-Represents a coffee brew item shown in the home screen.
-
-class Brew {
-  final String name;
-  final String sugars;
-  final int strength;
-}
-UserData
-
-Stores user-specific preferences in Firestore.
-
-class UserData {
-  final String uid;
-  final String name;
-  final String sugars;
-  final int strength;
-}
-🔄 User Flow
-Authentication
-      ↓
-Home Screen (Brew List)
-      ↓
-Settings Bottom Sheet
-      ↓
-Update Firestore Data
-      ↓
-Realtime UI Refresh
-🔥 Firebase Setup
-1. Create Firebase Project
-
-Go to:
+Open Firebase Console and create a new project.
 
 https://console.firebase.google.com/
+2️⃣ Add Android App
 
-Create a new Firebase project.
-
-2. Add Android App
-
-Register your Android package name.
+Add your Flutter Android package name.
 
 Example:
 
@@ -103,90 +82,110 @@ Download:
 
 google-services.json
 
-Place it inside:
+Move it into:
 
 android/app/
-3. Enable Authentication
+3️⃣ Enable Authentication
+Firebase Console
+→ Authentication
+→ Sign-in Method
+→ Email/Password
+→ Enable
+4️⃣ Create Firestore Database
+Firestore Database
+→ Create Database
+→ Start in Test Mode
+📦 Installation
 
-In Firebase Console:
+Clone the repository:
 
-Authentication → Sign-in method → Email/Password → Enable
-4. Create Firestore Database
-Firestore Database → Create Database
+git clone https://github.com/yourusername/brew-crew.git
 
-Start in test mode for development.
+Go into the project:
 
-5. Install Dependencies
-dependencies:
-  flutter:
-    sdk: flutter
+cd brew-crew
 
-  firebase_core: ^latest
-  firebase_auth: ^latest
-  cloud_firestore: ^latest
-  provider: ^latest
-  flutter_spinkit: ^latest
-
-Run:
+Install dependencies:
 
 flutter pub get
-▶️ Running the Project
-Clone the repository
-git clone https://github.com/your-username/brew-crew.git
-Navigate into the project
-cd brew-crew
-Run the app
+
+Run the app:
+
 flutter run
+🧱 Data Models
+Brew Model
+class Brew {
+  final String name;
+  final String sugars;
+  final int strength;
+
+  Brew({
+    required this.name,
+    required this.sugars,
+    required this.strength,
+  });
+}
+UserData Model
+class UserData {
+  final String uid;
+  final String name;
+  final String sugars;
+  final int strength;
+
+  UserData({
+    required this.uid,
+    required this.name,
+    required this.sugars,
+    required this.strength,
+  });
+}
+⚡ App Flow
+Login/Register
+        ↓
+Realtime Brew List
+        ↓
+Settings Bottom Sheet
+        ↓
+Firestore Update
+        ↓
+Automatic UI Refresh
+🎯 Why This Project?
+
+Brew Crew is a great project for learning:
+
+Firebase Authentication
+Firestore realtime streams
+Provider state management
+Flutter architecture
+Form handling
+Bottom sheets
+Clean UI design
+
+Perfect for intermediate Flutter developers who want a real Firebase project.
+
 📸 Screenshots
-Authentication	Home Screen	Settings
-Login & Register UI	Live Brew List	Update Brew Preferences
-
-Add your screenshots here later.
-
-☕ Brew Settings
-
-Users can customize:
-
-Setting	Range
-Sugars	0 – 4
-Strength	100 – 900
-
-Changes update instantly in Firestore and reflect in the UI through streams.
-
-🧠 Learning Goals
-
-This project is excellent for practicing:
-
-Firebase Authentication workflows
-Firestore CRUD operations
-StreamProvider & reactive UI
-Flutter form validation
-Clean project structure
-Stateful + Stateless widget patterns
-🚀 Future Improvements
-🌙 Dark Mode
-🖼️ Profile Pictures
-🔔 Push Notifications
-📊 Brew Analytics
-🌐 Multi-language Support
-🍎 iOS Optimization
-🧪 Unit & Widget Testing
+Login	Home	Settings
+Add Screenshot	Add Screenshot	Add Screenshot
+🛠 Future Improvements
+🌙 Dark mode
+📸 Profile images
+🔔 Push notifications
+📱 Better animations
+🍎 iOS optimization
+🧪 Testing support
+🌍 Multi-language support
 🤝 Contributing
 
-Pull requests are welcome.
+Contributions are welcome.
 
-If you'd like to improve the project:
+Fork → Create Branch → Commit → Pull Request
+⭐ Support
 
-Fork the repository
-Create a feature branch
-Commit your changes
-Open a pull request
-📜 License
+If you like this project:
 
-This project is licensed under the MIT License.
+Give it a ⭐ on GitHub
+Share it with other Flutter developers
+Improve it and build your own version
+📄 License
 
-👨‍💻 Author
-
-Built with Flutter & Firebase ☕🔥
-
-If you like this project, consider giving it a ⭐ on GitHub.
+MIT License © 2026 Brew Crew
