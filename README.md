@@ -111,7 +111,26 @@ the refreshed `google-services.json` into `android/app/` and rebuild the app.
 Without the enabled Email/Password provider or the matching fingerprints,
 Firebase Auth can fail with `CONFIGURATION_NOT_FOUND` during registration.
 
-4️⃣ Create Firestore Database
+4️⃣ Sign release builds
+
+Release APKs must be signed with a non-debug keystore before distribution.
+Create `android/key.properties` with these entries:
+
+```properties
+storePassword=...
+keyPassword=...
+keyAlias=upload
+storeFile=app/upload-keystore.jks
+```
+
+Keep `key.properties` and the keystore private. Build ABI-specific release
+APKs with:
+
+```bash
+flutter build apk --release --split-per-abi
+```
+
+5️⃣ Create Firestore Database
 
 Firestore Database
 → Create Database
